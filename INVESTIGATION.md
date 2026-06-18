@@ -102,7 +102,27 @@ GPU 2: 10005:0   "llvmpipe (LLVM 21.1.8)" CPU
 | `MESA_VK_DEVICE_SELECT=1002:1636` | AMD RADV (Mesa) | **crash**, `AllocBufferMemory` -2 (`logs/triage/vk-amd.log`) |
 | `MESA_VK_DEVICE_SELECT=10de:2191` | NVIDIA proprietary | **crash**, identical `AllocBufferMemory` -2 (`logs/triage/vk-nvidia.log`) |
 
-## 5. Conclusion
+## 5. Reconfirmation, dependency scope, and Vulkan validation
+
+**Reconfirmed** immediately before reporting: the default launch still crashes deterministically with
+the identical signature (`AllocBufferMemory` -2 → `SkiaBackendContext.cpp:70` → `SIGILL`).
+
+**What is mine vs. Ladybird's.** `libskia.so` is the **vcpkg-pinned** build
+(`Build/release/vcpkg_installed/x64-linux-dynamic/lib/libskia.so`, `chromium_7258`); Ladybird's
+renderer (Skia + `LibGfx`/Compositor) is identical to what upstream CI and other contributors build —
+it is not compiled from anything on my system. The unusual variables are all from the OS: Mesa
+26.0.3 / RADV, NVIDIA 595.71.05, Vulkan loader + ICDs 1.4.341, kernel 7.0. Combined with "no one
+reports a *startup* crash," the differing factor is the **system Vulkan stack**.
+
+**Vulkan validation** (`VK_LAYER_KHRONOS_validation` 1.4.341) was installed and confirmed loaded at
+both instance and device level in the process that creates the Vulkan device (loader debug:
+`logs/triage/validation-layer-loaded.txt`). The run produced **no VUID / usage errors** before the
+failure (`logs/triage/validation-run.log`). Interpretation: Ladybird/Skia is **not making an invalid
+Vulkan call** — `vkAllocateMemory` returns `VK_ERROR_OUT_OF_DEVICE_MEMORY` for a small, valid
+allocation on an idle system, a runtime refusal validation does not flag. Not fully exonerating
+(Skia could request a valid-but-unsatisfiable memory type), but there is no API misuse.
+
+## 6. Conclusion
 
 - The crash is **genuinely GPU-independent**, now proven with the correct mechanism: **two
   completely independent Vulkan drivers** (Mesa RADV and the NVIDIA proprietary driver) fail
@@ -110,10 +130,13 @@ GPU 2: 10005:0   "llvmpipe (LLVM 21.1.8)" CPU
   the NVIDIA driver reproducing it.
 - **CPU painting works**, isolating the fault to the Vulkan/Skia compositor path and providing
   a workaround (`--force-cpu-painting`).
-- This points at Ladybird's Vulkan/Skia compositor setup on a current Vulkan 1.4 stack, rather
-  than my configuration. Independently, hard-asserting on a failed GPU submit — which takes the
-  whole browser down with `SIGILL` instead of falling back to software — is a defensible
-  robustness bug regardless of the underlying allocation failure.
+- Evidence points to a **driver / Vulkan-stack interaction** on a very new stack: Skia is pinned and
+  identical to upstream, validation found no API misuse, and the device refuses a small valid
+  allocation. So this is likely partly environmental (Mesa 26 / Vulkan 1.4.341 / NVIDIA 595), not a
+  pure Ladybird logic bug — and not proven to be a Ladybird *defect* in the renderer.
+- **Independently of the cause**, hard-asserting on a failed GPU submit — taking the whole browser
+  down with `SIGILL` instead of falling back to CPU painting (which works) — is a Ladybird-side
+  robustness issue. This is the part squarely within Ladybird's control and worth reporting.
 ### Duplicate check (open + closed issues)
 
 Searched the tracker for the exact assertion strings and the Compositor path:

@@ -36,7 +36,9 @@ Two completely independent Vulkan drivers failing at the same small allocation a
 - **#6382** (OpenStreetMap iD editor) shows the same `skgpu::VulkanMemory::AllocBufferMemory` Error -2, but triggered by a *heavy page* — many repeated failures with `allocUsage:2` and persistent mapping, consistent with GPU-memory pressure under load. This report differs: a **single small** allocation (`allocUsage:1`) fails **at startup with no page loaded**, and is immediately fatal.
 - **#9940** (incompatible Vulkan backend selection on multi-device Linux) shares the multi-GPU/Vulkan theme, but crashes in the WebGL `OpenGLContext`/`eglCreateImage` path triggered by a page, not in the Compositor at startup.
 
-Separately: even if the underlying allocation failure is environmental, taking down the entire browser via `VERIFY` on a failed GPU submit (rather than falling back to CPU painting) may be worth treating as a robustness issue.
+**What I ruled out / scope.** Skia here is the vcpkg-pinned build (`libskia.so`, `chromium_7258`), identical to upstream — the renderer is not built from anything on my system. With `VK_LAYER_KHRONOS_validation` (1.4.341) loaded at instance and device level, there are **no validation/usage errors** before the failure, so this is not an invalid Vulkan call from Ladybird/Skia — the driver returns `VK_ERROR_OUT_OF_DEVICE_MEMORY` for a small, valid allocation on an idle system. The unusual variable is the (very new) system Vulkan stack, so this may be a driver/Vulkan-stack interaction rather than a Ladybird renderer defect.
+
+Separately, and **regardless of the underlying cause**: taking the whole browser down via `VERIFY` on a failed GPU submit — instead of falling back to CPU painting, which works (`--force-cpu-painting`) — may be worth treating as a robustness issue.
 
 ### Operating system
 

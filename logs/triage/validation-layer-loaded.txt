@@ -1,0 +1,21 @@
+# Vulkan loader debug — confirming VK_LAYER_KHRONOS_validation loaded (then the crash)
+# Command: VK_LOADER_DEBUG=layer VK_INSTANCE_LAYERS=VK_LAYER_KHRONOS_validation ./Build/release/bin/Ladybird about:blank
+
+33:[Vulkan Loader] LAYER:                /usr/share/vulkan/explicit_layer.d/VkLayer_khronos_validation.json
+36:[Vulkan Loader] WARNING | LAYER: env var 'VK_INSTANCE_LAYERS' defined and adding layers "VK_LAYER_KHRONOS_validation"
+37:[Vulkan Loader] WARNING | LAYER: env var 'VK_INSTANCE_LAYERS' defined and adding layers "VK_LAYER_KHRONOS_validation"
+38:[Vulkan Loader] DEBUG | LAYER:  Loading layer library libVkLayer_khronos_validation.so
+39:[Vulkan Loader] INFO | LAYER:   Insert instance layer "VK_LAYER_KHRONOS_validation" (/usr/lib/x86_64-linux-gnu/libVkLayer_khronos_validation.so)
+40:[Vulkan Loader] DEBUG | LAYER:  Loading layer library libVkLayer_MESA_device_select.so
+41:[Vulkan Loader] INFO | LAYER:   Insert instance layer "VK_LAYER_MESA_device_select" (/usr/lib/x86_64-linux-gnu/libVkLayer_MESA_device_select.so)
+56:[Vulkan Loader] LAYER:                     Enabled By: Environment Variable VK_INSTANCE_LAYERS
+57:[Vulkan Loader] LAYER:                     Manifest: /usr/share/vulkan/explicit_layer.d/VkLayer_khronos_validation.json
+58:[Vulkan Loader] LAYER:                     Library:  /usr/lib/x86_64-linux-gnu/libVkLayer_khronos_validation.so
+61:[Vulkan Loader] INFO | LAYER:   Inserted device layer "VK_LAYER_KHRONOS_validation" (/usr/lib/x86_64-linux-gnu/libVkLayer_khronos_validation.so)
+70:[Vulkan Loader] LAYER:                     Enabled By: Environment Variable VK_INSTANCE_LAYERS
+71:[Vulkan Loader] LAYER:                     Manifest: /usr/share/vulkan/explicit_layer.d/VkLayer_khronos_validation.json
+72:[Vulkan Loader] LAYER:                     Library:  /usr/lib/x86_64-linux-gnu/libVkLayer_khronos_validation.so
+110:Failed vulkan call. Error: -2, skgpu::VulkanMemory::AllocBufferMemory (allocUsage:1, shouldPersistentlyMapCpuToGpu:0)
+111:Could not allocate vertices
+112:Failed vulkan call. Error: -1, CreateFence(gpu->device(), &fenceInfo, nullptr, &fSubmitFence)
+113:VERIFICATION FAILED: context.submit(GrSyncCpu::kNo) at /home/jonathan-haddock/ladybird/Libraries/LibGfx/SkiaBackendContext.cpp:70
