@@ -5,6 +5,8 @@ web browser, built from source on a current Linux laptop. Captures the whole arc
 C++/Vulkan project from source, reproducing a runtime crash, **challenging my own conclusion**, and
 narrowing it to a root cause with a workaround — written up as a clean upstream bug report.
 
+**Filed upstream:** [LadybirdBrowser/ladybird#10172](https://github.com/LadybirdBrowser/ladybird/issues/10172)
+
 ## TL;DR finding
 
 Ladybird (commit `849d528`) crashes on launch before showing a page. The **Compositor** process
