@@ -3,6 +3,10 @@
 > Ready to paste into https://github.com/LadybirdBrowser/ladybird/issues/new (Bug report template).
 > Fields below map 1:1 to the template. Attach `logs/default.log`, `logs/amd.log`, `logs/nvidia.log`,
 > `logs/triage/*`, and `logs/system-info.txt` to the issue.
+>
+> Filesystem paths in this repository copy are normalized to `/home/user` as an information-hygiene
+> habit. The report and logs filed upstream use the **unmodified** backtrace, so maintainers see the
+> exact output for reproduction.
 
 ### Summary
 
@@ -84,25 +88,25 @@ Ladybird PID file '/run/user/1000/Ladybird.pid' exists with PID 683138, but proc
 Failed vulkan call. Error: -2, skgpu::VulkanMemory::AllocBufferMemory (allocUsage:1, shouldPersistentlyMapCpuToGpu:0)
 Could not allocate vertices
 Failed vulkan call. Error: -1, CreateFence(gpu->device(), &fenceInfo, nullptr, &fSubmitFence)
-VERIFICATION FAILED: context.submit(GrSyncCpu::kNo) at /home/jonathan-haddock/ladybird/Libraries/LibGfx/SkiaBackendContext.cpp:70
+VERIFICATION FAILED: context.submit(GrSyncCpu::kNo) at /home/user/ladybird/Libraries/LibGfx/SkiaBackendContext.cpp:70
 Stack trace (most recent call first):
-#0  0x000078ba6655511b at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-gfx.so.0
-#1  0x000078ba66555713 at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-gfx.so.0
-#2  0x000078ba682686de at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-web.so.0
-#3  0x00005e701474ee2e at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
-#4  0x00005e701474f11f at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
-#5  0x00005e7014782841 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
-#6  0x000078ba6a59ce57 at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
-#7  0x000078ba6a59c21f at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
-#8  0x000078ba6a5a2c7b at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
-#9  0x00005e701473a19b at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
-#10 0x00005e7014792807 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#0  0x000078ba6655511b at /home/user/ladybird/Build/release/lib/liblagom-gfx.so.0
+#1  0x000078ba66555713 at /home/user/ladybird/Build/release/lib/liblagom-gfx.so.0
+#2  0x000078ba682686de at /home/user/ladybird/Build/release/lib/liblagom-web.so.0
+#3  0x00005e701474ee2e at /home/user/ladybird/Build/release/libexec/Compositor
+#4  0x00005e701474f11f at /home/user/ladybird/Build/release/libexec/Compositor
+#5  0x00005e7014782841 at /home/user/ladybird/Build/release/libexec/Compositor
+#6  0x000078ba6a59ce57 at /home/user/ladybird/Build/release/lib/liblagom-core.so.0
+#7  0x000078ba6a59c21f at /home/user/ladybird/Build/release/lib/liblagom-core.so.0
+#8  0x000078ba6a5a2c7b at /home/user/ladybird/Build/release/lib/liblagom-core.so.0
+#9  0x00005e701473a19b at /home/user/ladybird/Build/release/libexec/Compositor
+#10 0x00005e7014792807 at /home/user/ladybird/Build/release/libexec/Compositor
 #11 0x000078ba65c2a600 in __libc_start_call_main
 #12 0x000078ba65c2a717 in __libc_start_main_impl
-#13 0x00005e70147399a4 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#13 0x00005e70147399a4 at /home/user/ladybird/Build/release/libexec/Compositor
 288853.121 WebContent(683227): Failed to receive message_id: 33
 288853.121 Ladybird(683200): Failed to receive message_id: 6
-VERIFICATION FAILED: response at /home/jonathan-haddock/ladybird/Libraries/LibIPC/Connection.h:74
+VERIFICATION FAILED: response at /home/user/ladybird/Libraries/LibIPC/Connection.h:74
 Stack trace (most recent call first):
 #0  (inlined) IPC::Connection<...>::send_sync<...CreateContext...> at Libraries/LibIPC/Connection.h:74:9
 #1  (inlined) CompositorControlServerProxy<...>::create_context(...) at Services/Compositor/CompositorControlServerEndpoint.h:1057:96

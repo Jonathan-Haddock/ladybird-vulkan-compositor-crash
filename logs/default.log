@@ -2,44 +2,44 @@ Ladybird PID file '/run/user/1000/Ladybird.pid' exists with PID 683138, but proc
 Failed vulkan call. Error: -2, skgpu::VulkanMemory::AllocBufferMemory (allocUsage:1, shouldPersistentlyMapCpuToGpu:0)
 Could not allocate vertices
 Failed vulkan call. Error: -1, CreateFence(gpu->device(), &fenceInfo, nullptr, &fSubmitFence)
-VERIFICATION FAILED: context.submit(GrSyncCpu::kNo) at /home/jonathan-haddock/ladybird/Libraries/LibGfx/SkiaBackendContext.cpp:70
+VERIFICATION FAILED: context.submit(GrSyncCpu::kNo) at /home/user/ladybird/Libraries/LibGfx/SkiaBackendContext.cpp:70
 Stack trace (most recent call first):
-#0  0x000078ba6655511b at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-gfx.so.0
-#1  0x000078ba66555713 at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-gfx.so.0
-#2  0x000078ba682686de at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-web.so.0
-#3  0x00005e701474ee2e at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
-#4  0x00005e701474f11f at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
-#5  0x00005e7014782841 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
-#6  0x000078ba6a59ce57 at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
-#7  0x000078ba6a59c21f at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
-#8  0x000078ba6a5a2c7b at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
-#9  0x00005e701473a19b at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
-#10 0x00005e7014792807 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#0  0x000078ba6655511b at /home/user/ladybird/Build/release/lib/liblagom-gfx.so.0
+#1  0x000078ba66555713 at /home/user/ladybird/Build/release/lib/liblagom-gfx.so.0
+#2  0x000078ba682686de at /home/user/ladybird/Build/release/lib/liblagom-web.so.0
+#3  0x00005e701474ee2e at /home/user/ladybird/Build/release/libexec/Compositor
+#4  0x00005e701474f11f at /home/user/ladybird/Build/release/libexec/Compositor
+#5  0x00005e7014782841 at /home/user/ladybird/Build/release/libexec/Compositor
+#6  0x000078ba6a59ce57 at /home/user/ladybird/Build/release/lib/liblagom-core.so.0
+#7  0x000078ba6a59c21f at /home/user/ladybird/Build/release/lib/liblagom-core.so.0
+#8  0x000078ba6a5a2c7b at /home/user/ladybird/Build/release/lib/liblagom-core.so.0
+#9  0x00005e701473a19b at /home/user/ladybird/Build/release/libexec/Compositor
+#10 0x00005e7014792807 at /home/user/ladybird/Build/release/libexec/Compositor
 #11 0x000078ba65c2a600 in __libc_start_call_main at ./csu/../sysdeps/nptl/libc_start_call_main.h:59:16
 #12 0x000078ba65c2a717 in __libc_start_main_impl at ./csu/../csu/libc-start.c:360:3
-#13 0x00005e70147399a4 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#13 0x00005e70147399a4 at /home/user/ladybird/Build/release/libexec/Compositor
 288853.121 WebContent(683227): Failed to receive message_id: 33
 288853.121 Ladybird(683200): Failed to receive message_id: 6
-VERIFICATION FAILED: response at /home/jonathan-haddock/ladybird/Libraries/LibIPC/Connection.h:74
+VERIFICATION FAILED: response at /home/user/ladybird/Libraries/LibIPC/Connection.h:74
 Stack trace (most recent call first):
-#0  (inlined)          in AK::NonnullOwnPtr<Messages::CompositorControlServer::CreateContext::ResponseType> IPC::Connection<CompositorControlClientEndpoint, CompositorControlServerEndpoint>::send_sync<Messages::CompositorControlServer::CreateContext, AK::DistinctNumeric<unsigned long, Web::Compositor::__CompositorContextId_tag, AK::DistinctNumericFeature::Comparison, AK::DistinctNumericFeature::CastToBool>, AK::Optional<unsigned long>, int&>(AK::DistinctNumeric<unsigned long, Web::Compositor::__CompositorContextId_tag, AK::DistinctNumericFeature::Comparison, AK::DistinctNumericFeature::CastToBool>&&, AK::Optional<unsigned long>&&, int&) at /home/jonathan-haddock/ladybird/Libraries/LibIPC/Connection.h:74:9
-#1  (inlined)          in CompositorControlServerProxy<CompositorControlClientEndpoint, CompositorControlServerEndpoint>::create_context(AK::DistinctNumeric<unsigned long, Web::Compositor::__CompositorContextId_tag, AK::DistinctNumericFeature::Comparison, AK::DistinctNumericFeature::CastToBool>, AK::Optional<unsigned long>, int) at /home/jonathan-haddock/ladybird/Build/release/Services/Compositor/CompositorControlServerEndpoint.h:1057:96
-#2  0x00007087f06c4c5b in WebView::Application::register_compositor_context(WebView::WebContentClient&, AK::DistinctNumeric<unsigned long, Web::Compositor::__CompositorContextId_tag, AK::DistinctNumericFeature::Comparison, AK::DistinctNumericFeature::CastToBool>, AK::Optional<unsigned long>) at /home/jonathan-haddock/ladybird/Libraries/LibWebView/Application.cpp:586:40
-#3  0x00007087f0809704 in WebView::WebContentClient::compositor_context_id_for_page(unsigned long) at /home/jonathan-haddock/ladybird/Libraries/LibWebView/WebContentClient.cpp:97:51
-#4  0x00007087f0809daa in WebView::WebContentClient::allocate_compositor_context_id(unsigned long, Web::Compositor::PagePresentationRegistration) at /home/jonathan-haddock/ladybird/Libraries/LibWebView/WebContentClient.cpp:112:54
-#5  0x00007087f088a3f8 in WebContentClientStub::handle_allocate_compositor_context_id(IPC::Message&) at /home/jonathan-haddock/ladybird/Build/release/Services/WebContent/WebContentClientEndpoint.h:9829:120
-#6  0x00007087f0897420 in WebContentClientStub::handle(AK::NonnullOwnPtr<IPC::Message>) at /home/jonathan-haddock/ladybird/Build/release/Services/WebContent/WebContentClientEndpoint.h:9586:66
-#7  0x00007087f1347976 in IPC::ConnectionBase::handle_messages() at /home/jonathan-haddock/ladybird/Libraries/LibIPC/Connection.cpp:75:64
-#8  (inlined)          in operator() at /home/jonathan-haddock/ladybird/Libraries/LibIPC/Connection.cpp:24:24
-#9  0x00007087f13480c0 in call at /home/jonathan-haddock/ladybird/AK/Function.h:224:30
-#10 (inlined)          in AK::Function<void ()>::operator()() const at /home/jonathan-haddock/ladybird/AK/Function.h:147:29
-#11 (inlined)          in operator() at /home/jonathan-haddock/ladybird/Libraries/LibIPC/TransportSocket.cpp:251:27
-#12 0x00007087f13555f5 in call at /home/jonathan-haddock/ladybird/AK/Function.h:224:30
-#13 (inlined)          in AK::Function<void ()>::operator()() const at /home/jonathan-haddock/ladybird/AK/Function.h:147:29
-#14 (inlined)          in Core::Notifier::event(Core::Event&) at /home/jonathan-haddock/ladybird/Libraries/LibCore/Notifier.cpp:63:26
-#15 0x00007087f1304620 in Core::Notifier::event(Core::Event&) at /home/jonathan-haddock/ladybird/Libraries/LibCore/Notifier.cpp:59:6
-#16 (inlined)          in qt_notifier_activated at /home/jonathan-haddock/ladybird/UI/Qt/EventLoopImplementationQt.cpp:303:28
-#17 (inlined)          in operator() at /home/jonathan-haddock/ladybird/UI/Qt/EventLoopImplementationQt.cpp:323:30
+#0  (inlined)          in AK::NonnullOwnPtr<Messages::CompositorControlServer::CreateContext::ResponseType> IPC::Connection<CompositorControlClientEndpoint, CompositorControlServerEndpoint>::send_sync<Messages::CompositorControlServer::CreateContext, AK::DistinctNumeric<unsigned long, Web::Compositor::__CompositorContextId_tag, AK::DistinctNumericFeature::Comparison, AK::DistinctNumericFeature::CastToBool>, AK::Optional<unsigned long>, int&>(AK::DistinctNumeric<unsigned long, Web::Compositor::__CompositorContextId_tag, AK::DistinctNumericFeature::Comparison, AK::DistinctNumericFeature::CastToBool>&&, AK::Optional<unsigned long>&&, int&) at /home/user/ladybird/Libraries/LibIPC/Connection.h:74:9
+#1  (inlined)          in CompositorControlServerProxy<CompositorControlClientEndpoint, CompositorControlServerEndpoint>::create_context(AK::DistinctNumeric<unsigned long, Web::Compositor::__CompositorContextId_tag, AK::DistinctNumericFeature::Comparison, AK::DistinctNumericFeature::CastToBool>, AK::Optional<unsigned long>, int) at /home/user/ladybird/Build/release/Services/Compositor/CompositorControlServerEndpoint.h:1057:96
+#2  0x00007087f06c4c5b in WebView::Application::register_compositor_context(WebView::WebContentClient&, AK::DistinctNumeric<unsigned long, Web::Compositor::__CompositorContextId_tag, AK::DistinctNumericFeature::Comparison, AK::DistinctNumericFeature::CastToBool>, AK::Optional<unsigned long>) at /home/user/ladybird/Libraries/LibWebView/Application.cpp:586:40
+#3  0x00007087f0809704 in WebView::WebContentClient::compositor_context_id_for_page(unsigned long) at /home/user/ladybird/Libraries/LibWebView/WebContentClient.cpp:97:51
+#4  0x00007087f0809daa in WebView::WebContentClient::allocate_compositor_context_id(unsigned long, Web::Compositor::PagePresentationRegistration) at /home/user/ladybird/Libraries/LibWebView/WebContentClient.cpp:112:54
+#5  0x00007087f088a3f8 in WebContentClientStub::handle_allocate_compositor_context_id(IPC::Message&) at /home/user/ladybird/Build/release/Services/WebContent/WebContentClientEndpoint.h:9829:120
+#6  0x00007087f0897420 in WebContentClientStub::handle(AK::NonnullOwnPtr<IPC::Message>) at /home/user/ladybird/Build/release/Services/WebContent/WebContentClientEndpoint.h:9586:66
+#7  0x00007087f1347976 in IPC::ConnectionBase::handle_messages() at /home/user/ladybird/Libraries/LibIPC/Connection.cpp:75:64
+#8  (inlined)          in operator() at /home/user/ladybird/Libraries/LibIPC/Connection.cpp:24:24
+#9  0x00007087f13480c0 in call at /home/user/ladybird/AK/Function.h:224:30
+#10 (inlined)          in AK::Function<void ()>::operator()() const at /home/user/ladybird/AK/Function.h:147:29
+#11 (inlined)          in operator() at /home/user/ladybird/Libraries/LibIPC/TransportSocket.cpp:251:27
+#12 0x00007087f13555f5 in call at /home/user/ladybird/AK/Function.h:224:30
+#13 (inlined)          in AK::Function<void ()>::operator()() const at /home/user/ladybird/AK/Function.h:147:29
+#14 (inlined)          in Core::Notifier::event(Core::Event&) at /home/user/ladybird/Libraries/LibCore/Notifier.cpp:63:26
+#15 0x00007087f1304620 in Core::Notifier::event(Core::Event&) at /home/user/ladybird/Libraries/LibCore/Notifier.cpp:59:6
+#16 (inlined)          in qt_notifier_activated at /home/user/ladybird/UI/Qt/EventLoopImplementationQt.cpp:303:28
+#17 (inlined)          in operator() at /home/user/ladybird/UI/Qt/EventLoopImplementationQt.cpp:323:30
 #18 (inlined)          in operator() at /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs_impl.h:116:25
 #19 (inlined)          in call_internal<void, QtPrivate::FunctorCall<std::integer_sequence<long unsigned int>, QtPrivate::List<>, void, Ladybird::EventLoopManagerQt::register_notifier(Core::Notifier&)::<lambda()> >::call(Ladybird::EventLoopManagerQt::register_notifier(Core::Notifier&)::<lambda()>&, void**)::<lambda()> > at /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs_impl.h:65:41
 #20 (inlined)          in call at /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs_impl.h:115:29
@@ -57,9 +57,9 @@ Stack trace (most recent call first):
 #32 0x00007087efa0513c in QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) at /usr/lib/x86_64-linux-gnu/libQt6Core.so.6
 #33 0x00007087ef798f5a in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) at /usr/lib/x86_64-linux-gnu/libQt6Core.so.6
 #34 0x00007087ef792c86 in QCoreApplication::exec() at /usr/lib/x86_64-linux-gnu/libQt6Core.so.6
-#35 0x00007087f06c1953 in WebView::Application::execute() at /home/jonathan-haddock/ladybird/Libraries/LibWebView/Application.cpp:1056:30
-#36 0x00005c34614ba65e in ladybird_main(Main::Arguments) at /home/jonathan-haddock/ladybird/UI/Qt/main.cpp:109:25
-#37 0x00005c3461516467 in main at /home/jonathan-haddock/ladybird/Libraries/LibMain/Main.cpp:50:6
+#35 0x00007087f06c1953 in WebView::Application::execute() at /home/user/ladybird/Libraries/LibWebView/Application.cpp:1056:30
+#36 0x00005c34614ba65e in ladybird_main(Main::Arguments) at /home/user/ladybird/UI/Qt/main.cpp:109:25
+#37 0x00005c3461516467 in main at /home/user/ladybird/Libraries/LibMain/Main.cpp:50:6
 #38 0x00007087eb62a600 in __libc_start_call_main at ./csu/../sysdeps/nptl/libc_start_call_main.h:59:16
 #39 0x00007087eb62a717 in __libc_start_main_impl at ./csu/../csu/libc-start.c:360:3
-#40 0x00005c34614b33a4 in _start at /home/jonathan-haddock/ladybird/Build/release/bin/Ladybird
+#40 0x00005c34614b33a4 in _start at /home/user/ladybird/Build/release/bin/Ladybird

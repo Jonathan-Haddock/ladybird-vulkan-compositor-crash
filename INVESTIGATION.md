@@ -8,6 +8,11 @@ the initial conclusion was challenged before anything was reported upstream.
 - **Target:** Ladybird, commit `849d52822048d0ac395e424b8f5107540c2d842f` (2026-06-18)
 - **Machine:** HP OMEN 15, AMD Ryzen 7 4800H (Renoir) + NVIDIA GTX 1660 Ti, Ubuntu 26.04 LTS, Wayland
 - **Full environment:** `logs/system-info.txt`
+- **A note on paths:** filesystem paths in this published repo are normalized to `/home/user` as an
+  information-hygiene habit. This is deliberate, not because the path is sensitive — it is a
+  personal machine — but to keep the reflex. The version filed upstream uses the unmodified
+  backtrace so maintainers have the exact output; normalizing the report a maintainer needs to
+  reproduce from would be the wrong call.
 
 ---
 
