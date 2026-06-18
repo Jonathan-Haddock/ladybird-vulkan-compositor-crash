@@ -1,0 +1,23 @@
+Ladybird PID file '/run/user/1000/Ladybird.pid' exists with PID 685577, but process cannot be found
+selectable devices:
+  GPU 0: 10de:2191 "NVIDIA GeForce GTX 1660 Ti" discrete GPU 0000:01:00.0
+  GPU 1: 1002:1636 "AMD Radeon Graphics (RADV RENOIR)" integrated GPU 0000:06:00.0
+  GPU 2: 10005:0 "llvmpipe (LLVM 21.1.8, 256 bits)" CPU 0000:00:00.0
+291013.020 Ladybird(685683): Failed to receive message_id: 4
+VERIFICATION FAILED: !is_error() at /home/jonathan-haddock/ladybird/AK/Error.h:171
+291013.021 WebContent(685709): Failed to receive message_id: 2
+Stack trace (most recent call first):
+#0  (inlined)          in AK::ErrorOr<AK::NonnullRefPtr<WebView::WebContentClient>, AK::Error>::release_value_but_fixme_should_propagate_errors() at /home/jonathan-haddock/ladybird/AK/Error.h:171:9
+#1  0x00007931d7fae9fb in WebView::ViewImplementation::initialize_client(WebView::ViewImplementation::CreateNewClient) at /home/jonathan-haddock/ladybird/Libraries/LibWebView/ViewImplementation.cpp:1427:133
+#2  0x000062a94a165de8 in Ladybird::WebContentView::initialize_client(WebView::ViewImplementation::CreateNewClient) at /home/jonathan-haddock/ladybird/UI/Qt/WebContentView.cpp:897:42
+#3  0x000062a94a1661ee in Ladybird::WebContentView::WebContentView(QWidget*, AK::RefPtr<WebView::WebContentClient>, unsigned long, Ladybird::WebContentViewInitialState) at /home/jonathan-haddock/ladybird/UI/Qt/WebContentView.cpp:124:22
+#4  0x000062a94a15074b in Ladybird::Tab::Tab(Ladybird::BrowserWindow*, AK::RefPtr<WebView::WebContentClient>, unsigned long) at /home/jonathan-haddock/ladybird/UI/Qt/Tab.cpp:150:94
+#5  0x000062a94a122e18 in Ladybird::BrowserWindow::create_new_tab(Web::HTML::ActivateTab) at /home/jonathan-haddock/ladybird/UI/Qt/BrowserWindow.cpp:585:29
+#6  (inlined)          in Ladybird::BrowserWindow::new_tab_from_url(URL::URL const&, Web::HTML::ActivateTab) at /home/jonathan-haddock/ladybird/UI/Qt/BrowserWindow.cpp:543:31
+#7  0x000062a94a128be8 in Ladybird::BrowserWindow::BrowserWindow(AK::Vector<URL::URL, 0ul, (AK::FastLastAccess)0> const&, Ladybird::BrowserWindow::IsPopupWindow, Ladybird::Tab*, AK::Optional<unsigned long>) at /home/jonathan-haddock/ladybird/UI/Qt/BrowserWindow.cpp:473:29
+#8  0x000062a94a110ee8 in Ladybird::Application::new_window(AK::Vector<URL::URL, 0ul, (AK::FastLastAccess)0> const&, Ladybird::WindowConfiguration const&, Ladybird::BrowserWindow::IsPopupWindow, Ladybird::Tab*, AK::Optional<unsigned long>) at /home/jonathan-haddock/ladybird/UI/Qt/Application.cpp:146:97
+#9  0x000062a94a10e5f6 in ladybird_main(Main::Arguments) at /home/jonathan-haddock/ladybird/UI/Qt/main.cpp:105:39
+#10 0x000062a94a16a467 in main at /home/jonathan-haddock/ladybird/Libraries/LibMain/Main.cpp:50:6
+#11 0x00007931d2e2a600 in __libc_start_call_main at ./csu/../sysdeps/nptl/libc_start_call_main.h:59:16
+#12 0x00007931d2e2a717 in __libc_start_main_impl at ./csu/../csu/libc-start.c:360:3
+#13 0x000062a94a1073a4 in _start at /home/jonathan-haddock/ladybird/Build/release/bin/Ladybird

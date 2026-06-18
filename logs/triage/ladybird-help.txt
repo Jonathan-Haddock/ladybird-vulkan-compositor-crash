@@ -1,0 +1,52 @@
+Usage:
+	./Build/release/bin/Ladybird [--headless[=mode]] [--screenshot-delay seconds] [--screenshot-path path] [--window-width pixels] [--window-height pixels] [--certificate certificate] [--new-window] [--force-new-process] [--allow-popups] [--disable-scripting] [--disable-sql-database] [--tuple-file-origins] [--debug-process process-name] [--profile-process process-name] [--test-mode] [--log-all-js-exceptions] [--disable-site-isolation] [--enable-idl-tracing] [--disable-http-memory-cache] [--disable-http-disk-cache] [--disable-content-blocker] [--disable-sandbox] [--content-blocker-list path] [--enable-autoplay] [--expose-experimental-interfaces] [--expose-internals-object] [--force-cpu-painting] [--force-fontconfig] [--collect-garbage-on-every-allocation] [--disable-scrollbar-painting] [--disable-async-scrolling] [--dns-server host|address] [--dns-port port (default: 53 or 853 if --dot)] [--dot] [--dnssec] [--default-time-zone time-zone-id] [--resource-map path] [--dump-style-invalidation-counters N] [--devtools[=port]] [--user-agent-preset name] [url...]
+
+Description:
+The Ladybird web browser :^)
+
+Options:
+	--help	Display help message and exit
+	--version	Print version
+	--headless[=mode]	Run Ladybird without a browser window. Mode may be 'screenshot' (default), 'layout-tree', 'text', or 'manual'.
+	--screenshot-delay seconds	Set the number of seconds to wait before taking a screenshot (only supported for headless screenshot mode)
+	--screenshot-path path	Save screenshots to the given location (only supported for headless screenshot mode)
+	--window-width pixels	Set viewport width in pixels (default: 800) (currently only supported for headless mode)
+	--window-height pixels	Set viewport height in pixels (default: 600) (currently only supported for headless mode)
+	-C certificate, --certificate certificate	Path to a certificate file
+	-n, --new-window	Force opening in a new window
+	--force-new-process	Force creation of a new browser process
+	--allow-popups	Disable popup blocking by default
+	--disable-scripting	Disable scripting by default
+	--disable-sql-database	Disable SQL database
+	--tuple-file-origins	Treat file:// URLs as having tuple origins
+	--debug-process process-name	Wait for a debugger to attach to the given process name (WebContent, RequestServer, etc.)
+	--profile-process process-name	Enable callgrind profiling of the given process name (WebContent, RequestServer, etc.)
+	--test-mode	Enable test mode
+	--log-all-js-exceptions	Log all JavaScript exceptions
+	--disable-site-isolation	Disable site isolation
+	--enable-idl-tracing	Enable IDL tracing
+	--disable-http-memory-cache	Disable HTTP memory cache
+	--disable-http-disk-cache	Disable HTTP disk cache
+	--disable-content-blocker	Disable content blocker
+	--disable-sandbox	Disable helper process sandboxing
+	--content-blocker-list path	Path to a content blocker list. May be specified multiple times.
+	--enable-autoplay	Enable multimedia autoplay
+	--expose-experimental-interfaces	Expose experimental IDL interfaces
+	--expose-internals-object	Expose internals object
+	--force-cpu-painting	Force CPU painting
+	--force-fontconfig	Force using fontconfig for font loading
+	-g, --collect-garbage-on-every-allocation	Collect garbage after every JS heap allocation
+	--disable-scrollbar-painting	Don't paint horizontal or vertical scrollbars on the main viewport
+	--disable-async-scrolling	Disable async scrolling
+	--dns-server host|address	Set the DNS server address
+	--dns-port port (default: 53 or 853 if --dot)	Set the DNS server port
+	--dot	Use DNS over TLS
+	--dnssec	Validate DNSSEC locally
+	--default-time-zone time-zone-id	Default time zone
+	--resource-map path	Path to JSON file mapping URLs to local files
+	--dump-style-invalidation-counters N	Dump style invalidation counters from WebContent after every N style invalidations
+	--devtools[=port]	Enable the Firefox DevTools server, with an optional port
+	--user-agent-preset name	Name of the User-Agent preset to use in place of the default User-Agent
+
+Arguments:
+	url	URLs to open

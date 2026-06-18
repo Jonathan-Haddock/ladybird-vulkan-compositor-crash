@@ -1,0 +1,112 @@
+Ladybird PID file '/run/user/1000/Ladybird.pid' exists with PID 685683, but process cannot be found
+Failed vulkan call. Error: -2, skgpu::VulkanMemory::AllocBufferMemory (allocUsage:1, shouldPersistentlyMapCpuToGpu:0)
+Could not allocate vertices
+Failed vulkan call. Error: -1, CreateFence(gpu->device(), &fenceInfo, nullptr, &fSubmitFence)
+VERIFICATION FAILED: context.submit(GrSyncCpu::kNo) at /home/jonathan-haddock/ladybird/Libraries/LibGfx/SkiaBackendContext.cpp:70
+Stack trace (most recent call first):
+#0  0x000076cc67f5511b at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-gfx.so.0
+#1  0x000076cc67f55713 at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-gfx.so.0
+#2  0x000076cc69c686de at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-web.so.0
+#3  0x00005945766d0e2e at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#4  0x00005945766d111f at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#5  0x0000594576704841 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#6  0x000076cc6bf7be57 at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
+#7  0x000076cc6bf7b21f at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
+#8  0x000076cc6bf81c7b at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
+#9  0x00005945766bc19b at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#10 0x0000594576714807 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#11 0x000076cc6762a600 in __libc_start_call_main at ./csu/../sysdeps/nptl/libc_start_call_main.h:59:16
+#12 0x000076cc6762a717 in __libc_start_main_impl at ./csu/../csu/libc-start.c:360:3
+#13 0x00005945766bb9a4 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+291014.813 WebContent(685789): Failed to receive message_id: 33
+291014.813 Ladybird(685745): Failed to receive message_id: 12
+291014.814 Ladybird(685745): Compositor process died, restarting (1/3)
+Failed vulkan call. Error: -2, skgpu::VulkanMemory::AllocBufferMemory (allocUsage:1, shouldPersistentlyMapCpuToGpu:0)
+Could not allocate vertices
+Failed vulkan call. Error: -1, CreateFence(gpu->device(), &fenceInfo, nullptr, &fSubmitFence)
+VERIFICATION FAILED: context.submit(GrSyncCpu::kNo) at /home/jonathan-haddock/ladybird/Libraries/LibGfx/SkiaBackendContext.cpp:70
+Stack trace (most recent call first):
+#0  0x000072252ff5511b at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-gfx.so.0
+#1  0x000072252ff55713 at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-gfx.so.0
+#2  0x0000722531c686de at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-web.so.0
+#3  0x000060a5148ade2e at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#4  0x000060a5148ae11f at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#5  0x000060a5148e1841 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#6  0x0000722533bd7e57 at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
+#7  0x0000722533bd721f at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
+#8  0x0000722533bddc7b at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
+#9  0x000060a51489919b at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#10 0x000060a5148f1807 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#11 0x000072252f62a600 in __libc_start_call_main at ./csu/../sysdeps/nptl/libc_start_call_main.h:59:16
+#12 0x000072252f62a717 in __libc_start_main_impl at ./csu/../csu/libc-start.c:360:3
+#13 0x000060a5148989a4 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+291015.279 WebContent(685789): Failed to receive message_id: 29
+291015.280 Ladybird(685745): Failed to receive message_id: 12
+291015.280 Ladybird(685745): Compositor process died, restarting (2/3)
+Failed vulkan call. Error: -2, skgpu::VulkanMemory::AllocBufferMemory (allocUsage:1, shouldPersistentlyMapCpuToGpu:0)
+Could not allocate vertices
+Failed vulkan call. Error: -1, CreateFence(gpu->device(), &fenceInfo, nullptr, &fSubmitFence)
+VERIFICATION FAILED: context.submit(GrSyncCpu::kNo) at /home/jonathan-haddock/ladybird/Libraries/LibGfx/SkiaBackendContext.cpp:70
+Stack trace (most recent call first):
+#0  0x000074a39355511b at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-gfx.so.0
+#1  0x000074a393555713 at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-gfx.so.0
+#2  0x000074a3952686de at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-web.so.0
+#3  0x000055ea233cce2e at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#4  0x000055ea233cd11f at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#5  0x000055ea23400841 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#6  0x000074a3971b2e57 at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
+#7  0x000074a3971b221f at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
+#8  0x000074a3971b8c7b at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
+#9  0x000055ea233b819b at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#10 0x000055ea23410807 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#11 0x000074a392c2a600 in __libc_start_call_main at ./csu/../sysdeps/nptl/libc_start_call_main.h:59:16
+#12 0x000074a392c2a717 in __libc_start_main_impl at ./csu/../csu/libc-start.c:360:3
+#13 0x000055ea233b79a4 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+291015.762 WebContent(685789): Failed to receive message_id: 33
+291015.762 Ladybird(685745): Failed to receive message_id: 12
+291015.762 Ladybird(685745): Compositor process died, restarting (3/3)
+Failed vulkan call. Error: -2, skgpu::VulkanMemory::AllocBufferMemory (allocUsage:1, shouldPersistentlyMapCpuToGpu:0)
+Could not allocate vertices
+Failed vulkan call. Error: -1, CreateFence(gpu->device(), &fenceInfo, nullptr, &fSubmitFence)
+VERIFICATION FAILED: context.submit(GrSyncCpu::kNo) at /home/jonathan-haddock/ladybird/Libraries/LibGfx/SkiaBackendContext.cpp:70
+Stack trace (most recent call first):
+#0  0x00007c489735511b at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-gfx.so.0
+#1  0x00007c4897355713 at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-gfx.so.0
+#2  0x00007c48990686de at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-web.so.0
+#3  0x000060744113ee2e at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#4  0x000060744113f11f at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#5  0x0000607441172841 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#6  0x00007c489b3b3e57 at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
+#7  0x00007c489b3b321f at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
+#8  0x00007c489b3b9c7b at /home/jonathan-haddock/ladybird/Build/release/lib/liblagom-core.so.0
+#9  0x000060744112a19b at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#10 0x0000607441182807 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+#11 0x00007c4896a2a600 in __libc_start_call_main at ./csu/../sysdeps/nptl/libc_start_call_main.h:59:16
+#12 0x00007c4896a2a717 in __libc_start_main_impl at ./csu/../csu/libc-start.c:360:3
+#13 0x00006074411299a4 at /home/jonathan-haddock/ladybird/Build/release/libexec/Compositor
+291016.237 WebContent(685789): Failed to receive message_id: 33
+291016.237 Ladybird(685745): Failed to receive message_id: 12
+Compositor process crashed repeatedly, crashing Browser
+VERIFICATION FAILED: false at /home/jonathan-haddock/ladybird/Libraries/LibWebView/Application.cpp:841
+Stack trace (most recent call first):
+#0  0x000071930e4c6746 in WebView::Application::recover_compositor_process() at /home/jonathan-haddock/ladybird/Libraries/LibWebView/Application.cpp:841:9
+#1  (inlined)          in AK::Function<void ()>::operator()() const at /home/jonathan-haddock/ladybird/AK/Function.h:147:29
+#2  0x000071930e7d742d in Core::ThreadEventQueue::process() at /home/jonathan-haddock/ladybird/Libraries/LibCore/ThreadEventQueue.cpp:130:39
+#3  0x00005fee84c2fd6e in Ladybird::EventLoopManagerQt::event_target_received_event(AK::Badge<Ladybird::EventLoopImplementationQtEventTarget>, QEvent*) at /home/jonathan-haddock/ladybird/UI/Qt/EventLoopImplementationQt.cpp:453:50
+#4  0x00005fee84c371cf in Ladybird::EventLoopImplementationQtEventTarget::event(QEvent*) at /home/jonathan-haddock/ladybird/UI/Qt/EventLoopImplementationQtEventTarget.cpp:14:59
+#5  0x000071930e9a0b7e in QApplicationPrivate::notify_helper(QObject*, QEvent*) at /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6
+#6  0x000071930d590097 in QCoreApplication::notifyInternal2(QObject*, QEvent*) at /usr/lib/x86_64-linux-gnu/libQt6Core.so.6
+#7  0x000071930d590320 in QCoreApplicationPrivate::sendPostedEvents(QObject*, int, QThreadData*) at /usr/lib/x86_64-linux-gnu/libQt6Core.so.6
+#8  0x000071930d8072ce at /usr/lib/x86_64-linux-gnu/libQt6Core.so.6
+#9  0x0000719309b36b9a at /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0
+#10 0x0000719309b381d6 at /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0
+#11 0x0000719309b383c2 in g_main_context_iteration at /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0
+#12 0x000071930d80513c in QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) at /usr/lib/x86_64-linux-gnu/libQt6Core.so.6
+#13 0x000071930d598f5a in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) at /usr/lib/x86_64-linux-gnu/libQt6Core.so.6
+#14 0x000071930d592c86 in QCoreApplication::exec() at /usr/lib/x86_64-linux-gnu/libQt6Core.so.6
+#15 0x000071930e4c1953 in WebView::Application::execute() at /home/jonathan-haddock/ladybird/Libraries/LibWebView/Application.cpp:1056:30
+#16 0x00005fee84c0d65e in ladybird_main(Main::Arguments) at /home/jonathan-haddock/ladybird/UI/Qt/main.cpp:109:25
+#17 0x00005fee84c69467 in main at /home/jonathan-haddock/ladybird/Libraries/LibMain/Main.cpp:50:6
+#18 0x000071930942a600 in __libc_start_call_main at ./csu/../sysdeps/nptl/libc_start_call_main.h:59:16
+#19 0x000071930942a717 in __libc_start_main_impl at ./csu/../csu/libc-start.c:360:3
+#20 0x00005fee84c063a4 in _start at /home/jonathan-haddock/ladybird/Build/release/bin/Ladybird
