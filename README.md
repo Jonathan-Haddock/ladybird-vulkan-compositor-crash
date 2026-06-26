@@ -1,11 +1,14 @@
 # Ladybird — Vulkan compositor startup crash (build, reproduce, triage, report)
 
-Investigation of a startup crash in the [Ladybird](https://github.com/LadybirdBrowser/ladybird)
-web browser, built from source on a current Linux laptop. Captures the whole arc: building a large
-C++/Vulkan project from source, reproducing a runtime crash, **challenging my own conclusion**, and
-narrowing it to a root cause with a workaround — written up as a clean upstream bug report.
+[![Filed upstream: issue #10172](https://img.shields.io/badge/filed%20upstream-LadybirdBrowser%2Fladybird%20%2310172-brightgreen?logo=github)](https://github.com/LadybirdBrowser/ladybird/issues/10172)
 
-**Filed upstream:** [LadybirdBrowser/ladybird#10172](https://github.com/LadybirdBrowser/ladybird/issues/10172)
+> **⤷ Where this work landed:** filed upstream as
+> **[LadybirdBrowser/ladybird#10172](https://github.com/LadybirdBrowser/ladybird/issues/10172)** —
+> a reproducible bug report with root cause and workaround for the Vulkan compositor startup crash.
+
+Investigation of a startup crash in the [Ladybird](https://github.com/LadybirdBrowser/ladybird)
+web browser, built from source on a current Linux laptop: building a large C++/Vulkan project from
+source, reproducing a runtime crash, narrowing it to a root cause, and confirming a workaround.
 
 ## TL;DR finding
 
